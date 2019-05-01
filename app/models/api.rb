@@ -3,10 +3,18 @@ class Api < ApplicationRecord
 
 
   def get_message
-    msg = {
-      message: {
-        
-      } 
-    }
+    
+    if self.name == "Init"
+      msg = self.keyboard.k_hash
+    else
+      msg = {
+        message: {
+          text: self.message
+        },
+        keyboard: self.keyboard.k_hash
+      }
+    end
+
+    return msg
   end
 end

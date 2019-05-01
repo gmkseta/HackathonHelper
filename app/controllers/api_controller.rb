@@ -2,21 +2,23 @@ class ApiController < ApplicationController
   protect_from_forgery :except => [:api_init, :api_message]
 
   def api_init
-    @msg =
-    {
-      type: "buttons",
-        buttons: [
-        "멘토님 도와줘요",
-        "노래이거 틀어주세여"
-        ]
-    }
-    render json: @msg, status: :ok
+    msg = Api.find_by_name("Init").get_message
+    render json: msg, status: :ok
   end  
+
 
   def api_message
     user_key = params[:user_key]
     content = params[:content]
-    p init_buttons
+    
+    if Button.pluck(:content).include? content
+      
+    else
+      
+    end
+    
+
+
     if content == "멘토님 도와줘요"
       @msg = 
       {
