@@ -17,7 +17,7 @@ key_subject = Keyboard.create(name: "세부주제", key_type: "buttons", buttons
 })
 key_music = Keyboard.create(name: "신청곡", key_type: "text")
 
-Api.create(name: Init, keyboard: key_init)
-Api.create(name: Subject,message: "주제를 선택해주세요", keyboard: key_subject)
-Api.create(name: Music,message: "신청곡을 입력해 주세요", keyboard: key_music)
-Api.create(name: MusicDone,message: "신청이 완료되었습니다", keyboard: key_init)
+Api.create(name: "Init", keyboard: key_init)
+Api.create(name: "Subject", message: "주제를 선택해주세요", keyboard: key_subject)
+Api.create(name: "Music", message: "신청곡을 입력해 주세요", keyboard: key_music)
+Api.create(name: "MusicDone", message: "신청이 완료되었습니다", keyboard: key_init)
