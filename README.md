@@ -1,24 +1,9 @@
-# README
+# 해커톤 플친 서버
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* 2019년 12월 31일이면 끝나버리는 카카오톡 플러스친구  API형 챗봇 마지막으로 한번 써보기
+* 넘나리슬픈것 ㅜ_ㅜ
 
-Things you may want to cover:
+#### 카카오톡 플친 CastleJunny 검색
 
-* Ruby version
+http://pf.kakao.com/_Tpxmxod
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
