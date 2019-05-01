@@ -6,63 +6,28 @@ class ApiController < ApplicationController
     render json: msg, status: :ok
   end  
 
-
   def api_message
     user_key = params[:user_key]
     content = params[:content]
-    
     if picked_button = Button.find_by_content(content)
-      UserRecord.create(button: picked_button, user_key: user_key, content: content)
-      @msg = picked_button.next_api&.get_message
+      msg = picked_button.next_api&.get_message      
     else
-      last_record =  UserRecord.find_by_user_key(user_key)
-      if last_record.next_api.name == "Music"
-        
+      last_record =  UserRecord.where(user_key: user_key).last
+      if last_record.where_from == "Music"
+        Music.create(user_key: user_key, content: content)
+        msg = Api.find_by_name("MusicDone").get_message
+      elsif last_record.where_from == "Question"
+        Question.create(user_key: user_key, content: content)
+        msg = Api.find_by_name("QuestionDone").get_message
       else
+        msg = Api.find_by_name("Init").get_message
       end
-
+      
     end
     
+    UserRecord.create(button: picked_button, user_key: user_key, content: content)
 
-
-    if true || content == "멘토님 도와줘요"
-      @msg = 
-      {
-        message:{
-          text: "sdad"
-        },
-        keyboard: Api.find_by_name("Init").keyboard.k_hash
-      }  
-    elsif content == "노래이거 틀어주세여"
-      @msg = 
-      {
-        message:{
-          text: "sdad"
-        },
-        keyboard:{
-          type: "buttons",
-            buttons: [
-            "멘토님 도와줘요",
-            "노래이거 틀어주세여"
-            ]
-        } 
-      }  
-    else
-      @msg = 
-      {
-        message:{
-          text: "error"
-        },
-        keyboard:{
-          type: "buttons",
-            buttons: [
-            "멘토님 도와줘요",
-            "노래이거 틀어주세여"
-            ]
-        } 
-      }
-    end
-    render json: @msg, status: :ok
+    render json: msg, status: :ok
   end
 
 end
