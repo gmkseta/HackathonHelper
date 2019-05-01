@@ -11,27 +11,27 @@ class ApiController < ApplicationController
     user_key = params[:user_key]
     content = params[:content]
     
-    if Button.pluck(:content).include? content
-      
+    if picked_button = Button.find_by_content(content)
+      UserRecord.create(button: picked_button, user_key: user_key, content: content)
+      @msg = picked_button.next_api&.get_message
     else
-      
+      last_record =  UserRecord.find_by_user_key(user_key)
+      if last_record.next_api.name == "Music"
+        
+      else
+      end
+
     end
     
 
 
-    if content == "멘토님 도와줘요"
+    if true || content == "멘토님 도와줘요"
       @msg = 
       {
         message:{
           text: "sdad"
         },
-        keyboard:{
-          type: "buttons",
-            buttons: [
-            "멘토님 도와줘요",
-            "노래이거 틀어주세여"
-            ]
-        } 
+        keyboard: Api.find_by_name("Init").keyboard.k_hash
       }  
     elsif content == "노래이거 틀어주세여"
       @msg = 
