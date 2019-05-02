@@ -14,7 +14,7 @@ class ApiController < ApplicationController
     if picked_button = Button.find_by_content(content)
       msg = picked_button.next_api&.get_message      
     else
-      from = last_record.where_from
+      from = last_record&.where_from
       begin
         obj = Object.const_get from
         saved_obj = obj.create(user_key: user_key, content: content)
