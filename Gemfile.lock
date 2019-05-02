@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/gmkseta/active_admin_flat_skin
+  revision: 92f28666bac0999d2763f4016a6bb4d060f23bd0
+  specs:
+    active_admin_flat_skin (0.1.2)
+      font-awesome-rails (~> 4.6, >= 4.6.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,7 +31,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_flat_skin (0.1.2)
     activeadmin (1.4.3)
       arbre (>= 1.1.1)
       coffee-rails
@@ -99,6 +105,8 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     font-awesome-sass (5.2.0)
       sassc (>= 1.11)
     formtastic (3.1.5)
@@ -260,7 +268,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_flat_skin
+  active_admin_flat_skin!
   activeadmin
   bootsnap (>= 1.1.0)
   byebug
@@ -268,7 +276,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  font-awesome-sass (~> 5.2.0)
+  font-awesome-sass
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2
