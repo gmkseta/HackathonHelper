@@ -27,7 +27,7 @@ class ApiController < ApplicationController
 
     if last_record&.content != content
         u_record = UserRecord.create(button: picked_button, user_key: user_key, content: content, before_record: last_record)
-        saved_obj.update(user_record: u_record) if saved_obj.present?
+        saved_obj.update(current_record: u_record) if saved_obj.present?
     end
 
     render json: msg, status: :ok

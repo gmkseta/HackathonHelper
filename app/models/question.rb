@@ -3,6 +3,8 @@ class Question < ApplicationRecord
     after_create :show_board
 
     def show_board
-        Pusher.trigger('qa-channel', 'qa-event', {message:""})
+        #self.
+        #Pusher.trigger('qa-channel', 'qa-event', {group:})
     end
 end
+
