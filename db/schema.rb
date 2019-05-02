@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_05_01_184423) do
   end
 
   create_table "buttons", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.integer "next_api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

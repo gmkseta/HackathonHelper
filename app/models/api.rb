@@ -14,7 +14,6 @@ class Api < ApplicationRecord
         keyboard: self.keyboard.k_hash
       }
     end
-
     return msg
   end
 end
