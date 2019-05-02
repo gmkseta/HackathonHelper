@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'activeadmin'
 gem 'active_admin_flat_skin'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.2.0'
 gem 'mysql2'
 
 group :development, :test do
