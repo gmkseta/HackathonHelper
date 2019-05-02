@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_184423) do
+ActiveRecord::Schema.define(version: 2019_05_02_145137) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_184423) do
     t.string "user_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_record_id"
+    t.index ["user_record_id"], name: "index_musics_on_user_record_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -76,6 +78,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_184423) do
     t.string "user_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_record_id"
+    t.index ["user_record_id"], name: "index_Questions_on_user_record_id"
   end
 
   create_table "user_records", force: :cascade do |t|
@@ -84,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_184423) do
     t.integer "button_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "before_record_id"
+    t.index ["before_record_id"], name: "index_user_records_on_before_record_id"
     t.index ["button_id"], name: "index_user_records_on_button_id"
   end
 

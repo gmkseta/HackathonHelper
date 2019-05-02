@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'activeadmin'
-gem 'active_admin_flat_skin'
+gem 'active_admin_flat_skin', :git => "git://github.com/gmkseta/active_admin_flat_skin"
 gem 'font-awesome-sass'
 gem 'mysql2'
 

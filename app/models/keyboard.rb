@@ -1,4 +1,5 @@
 class Keyboard < ApplicationRecord
+    
     has_one :api
     has_many :buttons, dependent: :destroy
     enum key_type: %i[text buttons]

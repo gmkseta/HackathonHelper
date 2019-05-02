@@ -5,6 +5,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Help"
+  config.comments = false
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -290,4 +291,9 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: '챗봇 API 관리', priority: 1
+    end
+  end
 end
