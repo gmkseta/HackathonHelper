@@ -1,3 +1,3 @@
 class Question < ApplicationRecord
-    belongs_to :user_record
+    belongs_to :current_record, class_name: :UserRecord, foreign_key: "current_record_id"
 end
