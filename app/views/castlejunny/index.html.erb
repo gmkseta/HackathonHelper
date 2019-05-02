@@ -1,0 +1,19 @@
+<h1>Castlejunny#index</h1>
+<p>Find me in app/views/castlejunny/index.html.erb</p>
+
+ <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('<%= Pusher.key %>', {
+      cluster: 'ap3',
+      forceTLS: true
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+
+  </script>

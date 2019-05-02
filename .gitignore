@@ -52,12 +52,11 @@ config/initializers/secret_token.rb
 config/master.key
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
-# config/secrets.yml
-
+config/secrets.yml
+config/application.yml
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
 .env
-
 ## Environment normalization:
 /.bundle
 /vendor/bundle
