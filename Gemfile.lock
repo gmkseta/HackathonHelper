@@ -99,7 +99,7 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0)
-    font-awesome-sass (5.8.1)
+    font-awesome-sass (5.2.0)
       sassc (>= 1.11)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -268,7 +268,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  font-awesome-sass
+  font-awesome-sass (~> 5.2.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2
