@@ -48,3 +48,5 @@ key_init.buttons.first.update(next_api: Api.create(name: "Subject", message: "ì£
 
 Css.create(name: 'left', width: 300)
 Css.create(name: 'right', width: 500)
+
+Css.create(name: 'BambooFontSize', width: 30)

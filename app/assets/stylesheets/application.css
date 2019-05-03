@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ #bamboo_title {
+    position: fixed;
+    z-index: 99;
+ }
