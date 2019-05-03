@@ -5,6 +5,7 @@ class Bamboo < ApplicationRecord
   def show_board
     team = self.user_record.before_record
     group = team.before_record
+    Pusher.cluster="ap3"
     Pusher.trigger('bb-channel', 'bb-event', {content: self.content})
   end 
 end
