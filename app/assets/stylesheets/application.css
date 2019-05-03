@@ -14,21 +14,28 @@
  *= require_self
  */
 
-._question_card {
+  ._main_fluid {
+    margin-top: 2em;
+  }
 
-}
+  ._question_card {
+   height: 300px;
+  }
 
-._question_title {
-  font-size: 2.5em;
-}
+  ._question_title {
+    font-size: 25px;
+    background-color:	#2f353a !important;
+  }
 
-._question_team {
-  font-size: 1.5em;
-}
+  ._question_team {
+    font-size: 25px;
+  }
 
-._question_content {
-  font-size: 2.3em;
-}
+  ._question_content {
+    font-size: 30px;
+    overflow: hidden;
+    color: # !important;
+  }
 
  #bamboo_title {
     position: fixed;

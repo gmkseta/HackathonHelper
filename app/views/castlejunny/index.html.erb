@@ -1,50 +1,33 @@
 <main class="main" style="margin-left:<%= Css.find_by_name("left")&.width %>px; margin-right:<%= Css.find_by_name("right")&.width %>px">
 
-<div class="container-fluid" style="margin-top: 3em">
+<div class="container-fluid _main_fluid">
 
+<!-- 더 나은 멋사 -->
   <div class="row">
     <div class="col-sm-6 col-md-4">
-      <div class="card text-white bg-primary _question_card">
-        <div class="card-header _question_title">더 나은 멋사
+      <div class="card text-white bg-warning _question_card">
+        <div class="card-header _question_title"><i class="fa fa-lightbulb-o fa-lg"></i>더 나은 멋사
           <span class="float-right _question_team">1조</span>
         </div>
         <div class="card-body _question_content">질문 있어요 일로 와주세요 질문 있어요 일로 와주세요 질문 있어요 일로 와주세요</div>
       </div>
     </div>
-
+<!-- 지역사회/소외계층 -->
     <div class="col-sm-6 col-md-4">
-      <div class="card text-white bg-success">
-        <div class="card-header _question_title">지역사회
+      <div class="card text-white bg-success _question_card">
+        <div class="card-header _question_title"><i class="fa fa-group fa-lg"></i>지역사회/소회계층
           <span class="float-right _question_team">2조</span>
         </div>
         <div class="card-body _question_content">CRUD가 안되요 도와주세요</div>
       </div>
     </div>
-
+<!-- 대학생활 -->
     <div class="col-sm-6 col-md-4">
-      <div class="card text-white bg-info">
-        <div class="card-header _question_title">대학생활
+      <div class="card text-white bg-info _question_card">
+        <div class="card-header _question_title"><i class="fa fa-graduation-cap fa-lg"></i>대학생활
           <span class="float-right _question_team">1조</span>
         </div>
-        <div class="card-body _question_content">이미지 파일이 안올라가요 멘토님 도와주시면 제가 사랑해드릴게요</div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="card text-white bg-warning">
-        <div class="card-header _question_title">대학생활
-          <span class="float-right _question_team">3조</span>
-        </div>
-        <div class="card-body _question_content">도와줘요</div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="card text-white bg-danger">
-        <div class="card-header _question_title">더 나은 멋사
-          <span class="float-right _question_team">2조</span>
-        </div>
-        <div class="card-body _question_content">서버가 안켜져요 ㅠㅠ</div>
+        <div class="card-body _question_content">이미지 파일이 안올라가요a  멘토님 도와주시면 제가 사랑해드릴게요</div>
       </div>
     </div>
   </div>
@@ -52,12 +35,12 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">Traffic & Sales</div>
+        <div class="card-header">심심</div>
         <div class="card-body">
           <div class="row">
-            <div class="col-sm-3">
-              <div class="callout callout-info">
-                <small class="text-muted">New Clients</small>
+            <div class="col-sm-4">
+              <div class="callout callout-warning">
+                <small class="text-muted">더 나은 멋사</small>
                 <br>
                 <strong class="h4">9,123</strong>
                 <div class="chart-wrapper">
@@ -66,9 +49,9 @@
               </div>
             </div>
 
-            <div class="col-sm-3">
-              <div class="callout callout-danger">
-                <small class="text-muted">Recuring Clients</small>
+            <div class="col-sm-4">
+              <div class="callout callout-success">
+                <small class="text-muted">지역사회/소외계층</small>
                 <br>
                 <strong class="h4">22,643</strong>
                 <div class="chart-wrapper">
@@ -77,24 +60,13 @@
               </div>
             </div>
 
-            <div class="col-sm-3">
-              <div class="callout callout-warning">
-                <small class="text-muted">Pageviews</small>
+            <div class="col-sm-4">
+              <div class="callout callout-info">
+                <small class="text-muted">대학생활</small>
                 <br>
                 <strong class="h4">78,623</strong>
                 <div class="chart-wrapper">
                   <canvas id="sparkline-chart-3" width="100" height="30"></canvas>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-3">
-              <div class="callout callout-success">
-                <small class="text-muted">Organic</small>
-                <br>
-                <strong class="h4">49,123</strong>
-                <div class="chart-wrapper">
-                  <canvas id="sparkline-chart-4" width="100" height="30"></canvas>
                 </div>
               </div>
             </div>
