@@ -13,17 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- .sidebar-fixed .sidebar.custom{
-     width: 300px;
- }
- .sidebar-fixed .sidebar.custom .sidebar-nav{
-    width: 300px;
-}
-.sidebar-fixed .sidebar.custom .nav{
-    width: 300px;
-}
-
-html:not([dir=rtl]) .sidebar-lg-show.sidebar-fixed .app-body .main{
-    margin-left: 300px;
-}

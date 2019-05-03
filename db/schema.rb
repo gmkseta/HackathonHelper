@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_064613) do
+ActiveRecord::Schema.define(version: 2019_05_03_192701) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 2019_05_03_064613) do
     t.integer "keyboard_id"
     t.index ["keyboard_id"], name: "index_buttons_on_keyboard_id"
     t.index ["next_api_id"], name: "index_buttons_on_next_api_id"
+  end
+
+  create_table "csses", force: :cascade do |t|
+    t.string "name"
+    t.integer "width"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "keyboards", force: :cascade do |t|
