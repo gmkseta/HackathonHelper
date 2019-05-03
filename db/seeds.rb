@@ -37,9 +37,9 @@ team_api = Api.create(name: "Team", message: "조를 선택해주세요", keyboa
 
 
 key_subject = Keyboard.create(name: "세부주제", key_type: "buttons", buttons_attributes: { 
-    0=>{content: "더 나은 '멋쟁이 사자처럼'을 위한 서비스",next_api: team_api},
-    1=>{content: "지역사회/소외계층을 위한 서비스",next_api: team_api},
-    2=>{content: "당신의 대학생활을 쓸모있게, 재밌게 만드는 서비스",next_api: team_api}
+    0=>{content: "더 나은 멋사",next_api: team_api},
+    1=>{content: "지역사회/소외계층",next_api: team_api},
+    2=>{content: "대학생활",next_api: team_api}
 })
 
 key_init.buttons.first.update(next_api: Api.create(name: "Subject", message: "주제를 선택해주세요", keyboard: key_subject))

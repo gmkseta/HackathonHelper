@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Help"
+  config.site_title = "HackathonHelper"
   config.comments = false
 
   # Set the link url for the title. For example, to take
@@ -139,7 +139,7 @@ ActiveAdmin.setup do |config|
   #
   # Enable and disable Batch Actions
   #
-  config.batch_actions = true
+  config.batch_actions = false
 
   # == Controller Filters
   #
@@ -296,4 +296,5 @@ ActiveAdmin.setup do |config|
       menu.add label: '챗봇 API 관리', priority: 1
     end
   end
+  
 end
