@@ -109,19 +109,5 @@
 </main>
 
 
- <script>
-;
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
 
-    var pusher = new Pusher('<%= Pusher.key %>', {
-      cluster: 'ap3',
-      forceTLS: true
-    });
-
-    var channel = pusher.subscribe('qa-channel');
-    channel.bind('qa-event', function(data) {
-      console.log(JSON.stringify(data));
-    });
-
-  </script>
+<%= render 'shared/pusher' %>

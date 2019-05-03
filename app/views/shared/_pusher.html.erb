@@ -1,0 +1,27 @@
+ <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('<%= Pusher.key %>', {
+      cluster: 'ap3',
+      forceTLS: true
+    });
+
+    var question_channel = pusher.subscribe('qa-channel');
+    question_channel.bind('qa-event', function(data) {
+      console.log(JSON.stringify(data));
+      
+    });
+    var bamboo_channel = pusher.subscribe('bb-channel');
+    bamboo_channel.bind('bb-event', function(data) {
+      console.log("in")
+      myString = "<div class=\"list-group-item list-group-item-accent-success list-group-item-divider\">" +
+      "<div> <strong>" + data.content + "</strong></div></div>"      
+      
+      $("#bamboo").append(myString)
+      $("#aside").scrollTop($("#aside")[0].scrollHeight);
+    });
+
+
+</script>

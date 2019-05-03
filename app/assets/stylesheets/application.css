@@ -15,7 +15,7 @@
  */
 
 ._question_card {
-  
+
 }
 
 ._question_title {
@@ -29,3 +29,8 @@
 ._question_content {
   font-size: 2.3em;
 }
+
+ #bamboo_title {
+    position: fixed;
+    z-index: 99;
+ }

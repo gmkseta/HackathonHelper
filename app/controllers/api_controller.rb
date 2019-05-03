@@ -16,7 +16,7 @@ class ApiController < ApplicationController
       from = last_record&.where_from
       begin
         obj = Object.const_get from
-        saved_obj = obj.create(user_key: user_key, content: content)
+        saved_obj = obj.create!(user_key: user_key, content: content)
         msg = Api.find_by_name(from+"Done").get_message
       rescue
         msg = Api.find_by_name("ReInit").get_message
