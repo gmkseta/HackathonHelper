@@ -10,7 +10,6 @@ class ApiController < ApplicationController
     user_key = params[:user_key]
     content = params[:content]
     last_record =  UserRecord.where(user_key: user_key).last
-
     if picked_button = Button.find_by_content(content)
       msg = picked_button.next_api&.get_message      
     else
@@ -20,7 +19,7 @@ class ApiController < ApplicationController
         saved_obj = obj.create(user_key: user_key, content: content)
         msg = Api.find_by_name(from+"Done").get_message
       rescue
-        msg = Api.find_by_name("Init").get_message
+        msg = Api.find_by_name("ReInit").get_message
       end
     end
     

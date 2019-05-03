@@ -3,8 +3,10 @@ class Question < ApplicationRecord
     after_create :show_board
 
     def show_board
-        #self.
-        #Pusher.trigger('qa-channel', 'qa-event', {group:})
+        team = self.user_record.before_record
+        group = team.before_record
+        Pusher.trigger('qa-channel', 'qa-event', {group: group.content, team: team.content, question: self.content})
     end
+    
 end
 

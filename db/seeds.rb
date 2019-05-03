@@ -9,18 +9,23 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 
 key_init = Keyboard.create(name: "초기화면", key_type: "buttons", buttons_attributes: { 
     0=>{content: "멘토님 질문받아주세요ㅜ!!!"},
-    1=>{content: "신청곡 받아주세요"} 
+    1=>{content: "신청곡 받아주세요"} ,
+    2=>{content: "대나무 쓰기"} 
 })
 Api.create(name: "Init", keyboard: key_init)
+Api.create(name: "ReInit",message: "선택하세여", keyboard: key_init)
 
 key_music = Keyboard.create(name: "신청곡", key_type: "text")
 key_question = Keyboard.create(name: "질문", key_type: "text")
+key_bamboo = Keyboard.create(name: "대나무", key_type: "text")
+
 Api.create(name: "QuestionDone", message: "질문 등록이 완료되었습니다", keyboard: key_init)
 Api.create(name: "MusicDone", message: "신청이 완료되었습니다", keyboard: key_init)
+Api.create(name: "BambooDone", message: "등록이 완료되었습니다", keyboard: key_init)
 
 q_api = Api.create(name: "Question", message: "질문을 입력해주세요", keyboard: key_question)
 key_init.buttons.second.update(next_api: Api.create(name: "Music", message: "신청곡을 입력해 주세요", keyboard: key_music))
-
+key_init.buttons.third.update(next_api: Api.create(name: "Bamboo", message: "대나무 입력해 주세요", keyboard: key_bamboo))
 
 key_team = Keyboard.create(name: "조 선택", key_type: "buttons", buttons_attributes: { 
     0=>{content: "1조", next_api: q_api},
