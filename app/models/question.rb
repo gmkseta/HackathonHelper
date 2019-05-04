@@ -15,7 +15,7 @@ class Question < ApplicationRecord
     def show_board
         if self.unsolved?
             Pusher.cluster="ap3"
-            Pusher.trigger('qa-channel', 'qa-event', {group: group.content, team: team.content, content: self.content, id: self.id})
+            Pusher.trigger('helper_channel', 'qa-event', {group: group.content, team: team.content, content: self.content, id: self.id})
         end
     end    
 
