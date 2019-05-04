@@ -17,7 +17,6 @@ ActiveAdmin.register AdminUser do
         column :email
         column :name
         column :role
-        column :kill_count
         actions if current_admin_user.master?
     end
 

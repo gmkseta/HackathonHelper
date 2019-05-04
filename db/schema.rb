@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_162537) do
+ActiveRecord::Schema.define(version: 2019_05_04_185928) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 2019_05_04_162537) do
     t.datetime "updated_at", null: false
     t.integer "user_record_id"
     t.integer "flag", default: 0
-    t.integer "admin_user_id"
-    t.index ["admin_user_id"], name: "index_questions_on_admin_user_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_questions_on_user_id"
     t.index ["user_record_id"], name: "index_questions_on_user_record_id"
   end
 
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_162537) do
     t.string "encrypted_password", default: "", null: false
     t.string "name"
     t.string "college"
-    t.integer "kill_count"
+    t.integer "kill_point", default: 0
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

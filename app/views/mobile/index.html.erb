@@ -4,15 +4,15 @@
 <div class="page-content">
   <div class="block" style="padding-top:10px">
     <% @questions.each do |question| %>
-      <a href="/single/">
+      <%= link_to finger_snap_path(question), method: :delete,data: {confirm: "질문을 받으시겠습니까??"} do %>
         <div class="card card-style-2">
           <div class="question-infos">
-            <h2 class="question-title"><%= question.group.content %></h2>
-            <div class="question-category"><%= question.team.content %></div>
-            <p class="question-description"><%= question.content %></p>
+            <h2 class="question-title" style="font-size:17px"><%= question.group.content %></h2>
+            <div class="question-category" style="font-size:17px"><%= question.team.content %></div>
+            <p class="question-description" style="font-size:20px"><%= question.content %></p>
           </div>
         </div>
-      </a>
+      <% end %>
     <% end %>
   </div>
 </div>

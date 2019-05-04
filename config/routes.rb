@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'keyboard' => 'api#api_init'
   post 'message' => 'api#api_message'
   root "castlejunny#index"
-  delete 'mobile/finger_snap/:id' => 'mobile#finger_snap'
+  delete 'mobile/finger_snap/:id' => 'mobile#finger_snap', as: 'finger_snap'
   get "*path" => 'castlejunny#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html  
 end
