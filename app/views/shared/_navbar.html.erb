@@ -1,0 +1,30 @@
+<style>
+  .logo_size {
+    width: 150px;
+    height: 28px;
+  }
+</style>
+
+<% left ||= '<a href="#" class="link icon-only panel-open" id="menu_nav" data-panel="right">
+          <i class="icon ion-ios-menu menu-icon-size" id="navbar-icon"></i>
+        </a>' %>
+<% custom_back ||= nil %>
+<% content ||=  nil %>
+<% right ||= '<a href="#" class="link icon-only panel-open" id="menu_nav" data-panel="right">
+          <i class="icon ion-ios-menu menu-icon-size" id="navbar-icon"></i>
+        </a>' %>
+<div class="navbar">
+  <div class="navbar-inner">
+      <div class="left">
+        <%= left.html_safe %>
+      </div>
+      <div class="title">
+        <a href="<%= root_path %>" class="link root-path-button" data-method="get">
+          <%= content %>
+        </a>
+      </div>
+      <div class="right">
+        <%= right.html_safe %>
+      </div>
+  </div>
+</div>

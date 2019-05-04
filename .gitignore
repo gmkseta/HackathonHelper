@@ -85,7 +85,7 @@ node_modules/
 /public/packs
 /public/packs-test
 /public/assets
-
+/public/helper
 # Ignore yarn files
 /yarn-error.log
 yarn-debug.log*
@@ -94,3 +94,4 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+

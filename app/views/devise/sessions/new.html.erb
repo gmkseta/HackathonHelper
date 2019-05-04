@@ -1,0 +1,44 @@
+<%= content_for :navbar do %>
+  <%= render "shared/navbar", back: true, content: '로그이이이닝만이ㅏㅁ니암ㄴ' %>
+<% end %>
+
+<div class="page-content">
+  <div class="oval"></div>
+  <div class="block">
+    <div class="contact-container" style="margin-top: 10%;">
+      <h2>로그인 화면이이임ㅇㅁㅁㅇㅁ</h2>
+      <div class="list no-hairlines custom-form contact-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="item-title item-label">
+            <%= f.label :email %>
+          </div>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <%= f.email_field :email, autocomplete: "email", placeholder: "E-mail" %>
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <div class="item-title item-label">
+              <%= f.label :password %>
+          </div>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <%= f.hidden_field :remember_me, value: 1 %><br>
+
+          <div class="actions">
+            <%= f.submit '로그인', :class => 'big-button button button-fill link' %>
+          </div>
+        <% end %>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>

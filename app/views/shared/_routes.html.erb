@@ -1,0 +1,11 @@
+<% routes = [] %>
+<% Rails.application.routes.routes.each do |route| %>
+  <% route_string = route.path.spec.to_s %>
+  <% if !route_string.start_with?("/admin", "/assets", "/rails", "/cable") %>
+    <% routes << {path: route_string.gsub("(.:format)", ""), url: route_string.gsub("(.:format)", "").gsub(":id", "{{id}}")} %>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  var routes = <%= routes.to_json.html_safe %>;
+</script>

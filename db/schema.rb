@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_232958) do
+ActiveRecord::Schema.define(version: 2019_05_04_162537) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -99,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_05_03_232958) do
     t.datetime "updated_at", null: false
     t.integer "user_record_id"
     t.integer "flag", default: 0
+    t.integer "admin_user_id"
+    t.index ["admin_user_id"], name: "index_questions_on_admin_user_id"
     t.index ["user_record_id"], name: "index_questions_on_user_record_id"
   end
 
@@ -111,6 +113,21 @@ ActiveRecord::Schema.define(version: 2019_05_03_232958) do
     t.integer "before_record_id"
     t.index ["before_record_id"], name: "index_user_records_on_before_record_id"
     t.index ["button_id"], name: "index_user_records_on_button_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.string "college"
+    t.integer "kill_count"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

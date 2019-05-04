@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>
+      HackathonHelper
+    </title>
+    <link rel="stylesheet" href="/helper/css/framework7.ios.css">    
+    <link rel="apple-touch-icon" href="/img/f7-icon-square.png">
+    <link rel="icon" href="/img/f7-icon.png">
+    <link rel="stylesheet" href="/helper/css/style.css">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    
+    
+  </head>
+  <body>
+    <div id="app">
+      <div class="view view-main view-init ios-edges">
+        <div class="page" data-name="<%= "#{controller_name}-#{action_name}" %>">
+          <%= yield :navbar %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <script src="/helper/js/framework7.min.js"></script>
+    
+    <%= render "shared/routes" %>
+    <script src="/helper/js/app.js"></script>
+    
+  </body>
+</html>
