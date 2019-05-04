@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'message' => 'api#api_message'
   root "castlejunny#index"
   delete 'mobile/finger_snap/:id' => 'mobile#finger_snap', as: 'finger_snap'
+  get 'ranker' => 'castlejunny#ranker'
   get "*path" => 'castlejunny#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html  
 end

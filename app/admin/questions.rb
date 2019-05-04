@@ -24,6 +24,7 @@ ActiveAdmin.register Question do
         end
         column :user_key
         column :user_record
+        column :user_id
         column :created_at
         actions if current_admin_user.master?
     end

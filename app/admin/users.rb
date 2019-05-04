@@ -11,5 +11,19 @@ ActiveAdmin.register User do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+    action_item :import_demo, only: :index do
+        render 'import'    
+    end
+    collection_action :import, method: [:post] do
+        User.import(params[:file])
+        redirect_to admin_users_path
+    end
+    index do
+        id_column
+        column :email
+        column :name
+        column :college
+        column :kill_point
+        actions if current_admin_user.master?
+    end
 end

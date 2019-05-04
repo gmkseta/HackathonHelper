@@ -10,7 +10,7 @@ class MobileController < ApplicationController
     if question.solved?
       redirect_to '/mobile/index', alert: '이미 누군가 해결함'
     else
-      question.update(flag: "solved", user: current_user)
+      question.update(flag: "solved", user_id: current_user.id)
       kill_point = current_user.kill_point
       current_user.update(kill_point: kill_point+1)
       
