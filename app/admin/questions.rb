@@ -20,7 +20,7 @@ ActiveAdmin.register Question do
         end
 
         column :team do |obj|
-            obj.team.content
+            obj.team&.content
         end
         column :user_key
         column :user_record

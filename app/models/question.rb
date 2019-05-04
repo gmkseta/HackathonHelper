@@ -5,11 +5,11 @@ class Question < ApplicationRecord
     belongs_to :user, optional: true
 
     def team
-        self.user_record.before_record
+        self.user_record&.before_record
     end
 
     def group
-        self.team.before_record
+        self.team&.before_record
     end
     
     def show_board
