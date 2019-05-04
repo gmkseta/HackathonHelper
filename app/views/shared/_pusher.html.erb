@@ -10,7 +10,28 @@
 
     var question_channel = pusher.subscribe('qa-channel');
     question_channel.bind('qa-event', function(data) {
-      console.log(JSON.stringify(data));
+      let css;
+      let icon
+      if (data.group.search("더 나은")!=-1){
+        css = 'bg-warning'
+        icon = 'fa-lightbulb-o'
+      }else if (data.group.search("지역")!=-1){
+        css = 'bg-success'
+        icon = 'fa-group'
+      }else{ 
+        css = 'bg-info'
+        icon = 'fa-graduation-cap'
+      }
+      qaString = "<div class=\"col-sm-6 col-md-4\"><div class=\"card text-white " + css +  " _question_card\">" +
+              "<div class=\"card-header _question_title\" style=\"font-size: <%= Css.find_by_name('CardHeader').width %>px\">" +
+                "<i class=\"fa " + icon + " fa-lg\"></i>"+ data.group +
+                "<span class=\"float-right _question_team\" style=\"font-size: <%= Css.find_by_name('CardHeader').width %>px\">" + data.team + 
+                "</span></div><div class=\"card-body _question_content\" style=\"font-size: <%= Css.find_by_name('CardBody').width %>px\">" +
+                data.content + "</div></div></div>"
+      $("#question").append(qaString)
+      $("html").scrollTop($("html")[0].scrollHeight)
+
+
       
     });
     var bamboo_channel = pusher.subscribe('bb-channel');

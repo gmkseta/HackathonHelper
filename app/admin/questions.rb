@@ -1,5 +1,6 @@
 ActiveAdmin.register Question do
     menu label: '질문', priority: 2
+    permit_params :user_record, :content, :user_key, :flag
 
     before_action :check_role, only: [:new, :create, :edit, :update, :destroy]
     
@@ -14,6 +15,13 @@ ActiveAdmin.register Question do
     index do
         id_column
         column :content
+        column :group do |obj|
+            obj.group.content
+        end
+
+        column :team do |obj|
+            obj.team.content
+        end
         column :user_key
         column :user_record
         column :created_at
