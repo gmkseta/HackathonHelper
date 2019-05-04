@@ -50,3 +50,5 @@ Css.create(name: 'left', width: 300)
 Css.create(name: 'right', width: 500)
 
 Css.create(name: 'BambooFontSize', width: 30)
+Css.create(name: 'CardHeader', width: 20)
+Css.create(name: 'CardBody', width: 30)
