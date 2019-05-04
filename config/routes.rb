@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'castlejunny/ban'
   devise_for :admin_users, ActiveAdmin::Devise.config
+  
   ActiveAdmin.routes(self)
+
   get 'keyboard' => 'api#api_init'
   post 'message' => 'api#api_message'
   root "castlejunny#ban"
