@@ -5,10 +5,10 @@
   <!-- 더 나은 멋사 -->
     <div class="row" id="question">
       <% @questions.each do |question| %>
-        <% if question.group.content.include? "더 나은" %>
+        <% if question.group&.content.include? "더 나은" %>
           <% css = 'bg-warning' %>
           <% icon = 'fa-lightbulb-o' %>
-        <% elsif question.group.content.include? "지역사회"%>
+        <% elsif question.group&.content.include? "지역사회"%>
           <% css = 'bg-success' %>
           <% icon = 'fa-group' %>
         <% else %>

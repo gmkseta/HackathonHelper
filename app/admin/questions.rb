@@ -16,7 +16,7 @@ ActiveAdmin.register Question do
         id_column
         column :content
         column :group do |obj|
-            obj.group.content
+            obj.group&.content
         end
 
         column :team do |obj|
