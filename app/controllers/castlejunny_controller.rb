@@ -1,7 +1,7 @@
 class CastlejunnyController < ApplicationController
   def index
-    @bamboos = Bamboo.order(created_at: :desc).limit(10)
-    @bamboos = @bamboos.reorder(created_at: :asc)
+    @bamboos = Bamboo.limit(15).order(created_at: :asc)
+    
     @questions = Question.unsolved
     @rankers = User.all.order(kill_point: :desc)
   end
