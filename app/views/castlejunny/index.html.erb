@@ -16,14 +16,14 @@
           <% icon = 'fa-graduation-cap' %>
         <% end %>
           <div class="col-sm-6 col-md-4">
-          <div id="question-<%= question.id %>">
-            <div class="card text-white <%= css %>  _question_card ">
-              <div class="card-header _question_title" style="font-size: <%= Css.find_by_name('CardHeader').width %>px">
-                <i class="fa <%= icon %> fa-lg"></i><%= question&.group&.content %>
-                <span class="float-right _question_team" style="font-size: <%= Css.find_by_name('CardHeader').width %>px"><%= question&.team&.content %></span>
+            <div id="question-<%= question.id %>">
+              <div class="card text-white <%= css %>  _question_card ">
+                <div class="card-header _question_title" style="font-size: <%= Css.find_by_name('CardHeader').width %>px">
+                  <i class="fa <%= icon %> fa-lg"></i><%= question&.group&.content %>
+                  <span class="float-right _question_team" style="font-size: <%= Css.find_by_name('CardHeader').width %>px"><%= question&.team&.content %></span>
+                </div>
+                <div class="card-body _question_content" style="font-size: <%= Css.find_by_name('CardBody').width %>px"><%= question.content %></div>
               </div>
-              <div class="card-body _question_content" style="font-size: <%= Css.find_by_name('CardBody').width %>px"><%= question.content %></div>
-            </div>
             </div>
           </div>
       <% end %>
