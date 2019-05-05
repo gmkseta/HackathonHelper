@@ -22,7 +22,7 @@
         css = 'bg-info'
         icon = 'fa-graduation-cap'
       }
-      qaString = "<div class=\"col-sm-6 col-md-4\"><div id=\"question-"+ data.id +"\"<div class=\"card text-white " + css +  " _question_card\">" +
+      qaString = "<div class=\"col-sm-6 col-md-4\"><div id=\"question-"+ data.id +"\"><div class=\"card text-white " + css +  " _question_card\">" +
               "<div class=\"card-header _question_title\" style=\"font-size: <%= Css.find_by_name('CardHeader').width %>px\">" +
                 "<i class=\"fa " + icon + " fa-lg\"></i>"+ data.group +
                 "<span class=\"float-right _question_team\" style=\"font-size: <%= Css.find_by_name('CardHeader').width %>px\">" + data.team + 
