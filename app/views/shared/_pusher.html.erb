@@ -30,14 +30,15 @@
                 data.content + "</div></div></div></div>"
       $("#question").append(qaString)
       $("html").scrollTop($("html")[0].scrollHeight)
-      
     });
     var bamboo_channel = pusher.subscribe('bb-channel');
     bamboo_channel.bind('bb-event', function(data) {
-      console.log("in")
+      var images=["png","jpg","jpeg","gif"]
+      if(images.includes(data.content.split(".")[data.content.split(".").length-1])){
+        data.content = "<img src='"+ data.content +"' style='width: 100%;'>"
+      }
       myString = "<div class=\"list-group-item list-group-item-accent-success list-group-item-divider\">" +
       "<div> <strong>" + data.content + "</strong></div></div>"      
-      
       $("#bamboo").append(myString)
       $("#aside").scrollTop($("#aside")[0].scrollHeight);
     });
