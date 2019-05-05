@@ -7,6 +7,7 @@ class CastlejunnyController < ApplicationController
   end
   def ranker
     @rankers = User.all.order(kill_point: :desc)
+    respond_to :js
   end
   def ban
   end

@@ -44,7 +44,8 @@
     var finger_snap_channel = pusher.subscribe('fs-channel');
     finger_snap_channel.bind('finger-snap', function(data){
       fsString = "question-"+data.question
-      finger_snap(document.getElementById(fsString))      
+      finger_snap(document.getElementById(fsString))   
+      $.get('/ranker')
     });
 
 </script>x
