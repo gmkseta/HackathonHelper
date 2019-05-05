@@ -6,7 +6,7 @@
               <th>순위</th>
               <th>학교</th>
               <th>이름</th>
-              <th>score</th>
+              <th>핑거스냅 카운트</th>
                 <!-- more columns are possible -->
           </tr>
       </thead>
@@ -16,7 +16,7 @@
               <td><%= i+1 %></td>
               <td><%= ranker.college %></td>
               <td><%= ranker.name %></td>
-              <td><%= ranker.kill_point %></td>
+              <td align="right"><%= ranker.kill_point %></td>
                   <!-- more columns are possible -->
             </tr>
           <% end %>
